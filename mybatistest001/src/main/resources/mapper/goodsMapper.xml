@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--主要完成：
+    一个Mapper文件是完成一张数据表的映射和操作(DAO的一部分操作)
+    1:每张数据源的操作的SQL
+    2:ORM映射利用mapper文件来自动完成
+    mapper的namespace属性是说明当前的mapper文件和哪一个接口绑定-->
+<mapper namespace="com.hellojava.dao.GoodsMapper">
+    <!--定义了一个查询操作，id是当前操作的唯一标识 resultType="当前查询操作返回的结果集封装的对象"
+     resultType 可以自动完成ORM映射；自动把结果的列和指定的对象进行名称匹配 结果goodsId
+     查找指定的类的goodsId属性-->
+    <select id="loadAll" resultType="com.hellojava.entity.Goods">
+        select * from goods
+    </select>
+
+    <select id="loadById" resultType="com.hellojava.entity.Goods" parameterType="int">
+        select * from goods where goodsId = #{goodsId}
+    </select>
+</mapper>
