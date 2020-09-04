@@ -1,0 +1,11 @@
+
+dom解析：
+
+单词：
+resources   配置文件
+students.xml 文件
+getAttributes
+
+问题：DOM解析中的node的#test是什么？
+
+
